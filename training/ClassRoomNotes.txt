@@ -1,0 +1,343 @@
+
+yum -- to do anything in ubuntu / centos
+    1  yum install git
+
+    2  git --verion
+    3  git --version
+    4  clear
+    5  git config --global user.name "Satish Mulpuru"
+    6  git config --global user.email "mulpuru.v.s@gmail.com"
+    7  git config --global color.branch auto
+    8  git config --global color.diff auto
+    9  git config --global color.status auto
+   10  git config --global color.ui auto
+   11  git init
+   12  git add .
+   13  mkdir git-demo
+   14  cd git-demo/
+   15  git init
+   16  touch file.txt
+   17  ls -l
+   18  vi file.txt
+   19  cat file.txt
+   20  git add file.txt
+   21  git status
+   22  git commit -m "committing file.txt file"
+   23  git status
+   24  git log
+   25  git checkout -b mybranch
+   26  git branch
+   27  ls -l
+   28  history
+   29  [root@ip-10-0-1-113 git-demo]# history
+   30      1  yum install git
+   31      2  git --verion
+   32      3  git --version
+   33      4  clear
+   34      5  git config --global user.name "Satish Mulpuru"
+   35      6  git config --global user.email "mulpuru.v.s@gmail.com"
+   36      7  git config --global color.branch auto
+   37      8  git config --global color.diff auto
+   38      9  git config --global color.status auto
+   39     10  git config --global color.ui auto
+   40     11  git init
+   41     12  git add .
+   42     13  mkdir git-demo
+   43     14  cd git-demo/
+   44     15  git init
+   45     16  touch file.txt
+   46     17  ls -l
+   47     18  vi file.txt
+   48     19  cat file.txt
+   49     20  git add file.txt
+   50     21  git status
+   51     22  git commit -m "committing file.txt file"
+   52     23  git status
+   53     24  git log
+   54     25  git checkout -b mybranch
+   55     26  git branch
+   56     27  ls -l
+   57     28  history
+   58  git branch
+   59  git branch ..
+   60  git branch master
+   61  clear
+   62  git branch
+   63  git remote add origin https://github.com/mulpuruvs/git-demo-project.git
+   64  git push -u origin master
+   65  git remote add origin https://github.com/mulpuruvs/git-demo.git
+   66  git branch
+   67  git remote add origin https://github.com/mulpuruvs/git-demo.git
+   68  git remote add origin https://github.com/mulpuruvs/git-demo.git
+   69  git remote add origin https://github.com/mulpuruvs/git-demo.git
+   70  git
+   71  git branch
+   72  clear
+   73  git remote add origin https://github.com/mulpuruvs/git-demo1.git
+   74  touch file.txt
+   75  git add file.txt
+   76  git branch branch1
+   77  git branch
+   78  git status
+   79  touch file.txt
+   80  git add file.txt
+   81  git status
+   82  vi sample.txt
+   83  git pust origin mybranch
+   84  git push origin mybranch
+   85  git checkout master
+   86  git branch
+   87  git push origin mybranch
+   88  git push origin mybranch
+   89  git status
+   90  git add sample.txt
+   91  git status
+   92  git branch
+   93  git checkout branch1
+   94  git status
+   95  git commit "mybranch1 commit"
+   96  git commit sample.txt "mybranch1 commit"
+   97  vi sample1.txt
+   98  git status
+   99  git add sample1.txt
+  100  git status
+  101  git commit "branch1 commit'
+"
+  102  git checkout master
+  103  git commit "branch1 commit"
+  104  git staus
+  105  git status
+  106  git checkout master
+  107  git pull origin master
+  108  history
+
+
+  113  mkdir git-demo1
+  114  cd git-demo1
+  115  git init
+  116  touch file1.txt
+  117  cat file1.txt
+  118  vi file1.txt
+  119  git status
+  120  git branch
+  121  git add file1.txt
+  122  git status
+  123  git commit -m "first commit"
+  124  git status
+  125  git log
+  126  git checout branch1
+  127  git checkout branch1
+  128  ls -l
+  129  git branch
+  130  git checkout -b branch1
+  131  git branch
+  132  ls -l
+  133  git checkout -b master
+  134  git checkout master
+  135  ls -l
+  136  git branch
+  137  git status
+  138  git checkout branch1
+  139  git status
+  140  git checkout master
+  141  cd ..
+  142  ls -l
+  143  cd git-demo
+
+To generate SSH key with RSA algorithm
+
+  144  ls -al ~/.ssh/
+  145  ssh-keygen -t rsa -b 4096 -C "mulpuruvs@gmail.com"
+  146  ls -al ~/.ssh/
+
+drwx------. 2 root root   61 Jan 30 06:38 .
+dr-xr-x---. 4 root root  179 Jan 30 05:45 ..
+-rw-------. 1 root root  545 Jan 29 06:48 authorized_keys
+-rw-------. 1 root root 3243 Jan 30 06:38 id_rsa
+-rw-r--r--. 1 root root  745 Jan 30 06:38 id_rsa.pub
+
+Adding the RSA key
+
+[root@ip-10-0-1-113 git-demo]# eval $(ssh-agent -s)
+Agent pid 4368
+[root@ip-10-0-1-113 git-demo]# ssh-add ~/.ssh/id_rsa
+Identity added: /root/.ssh/id_rsa (/root/.ssh/id_rsa)
+
+Get public key to Github...
+[root@ip-10-0-1-113 git-demo]#  cat ~/.ssh/id_rsa.pub
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCnsMfitPk9C2A3rRFaNY2VKD80VecVZ5t5FAuNnCBDBRnX/8ivRARKCrL9fru7e2mWkQuiX8r+X/EV+V9Qrq7/jNLLFxaLoghbMQd3YN4GcwfagQfAqR+8AL5suH9WefAIEUdYIrfVY/BNY0HVph+Di0ukbQHgg/nMrxmmmoG6pRBaHvY+sqD5aTaCSVUDb/A4zTqLXJbXR1PHlxX37FQxwbRwDBsw2m7/VK/RX502hQHx3ep9EOPbJIZl1FisAISfU1cBnxH9BXAQZ+WmLXRhI8MKd+jdFDzc2mxeOUttWNY/VjMmUYGW1+qRVV8Q73lCXJccOx937PsLeh5IInRsp6kiTIX8H1pTdZvqmLjSpOmzLhHqNfbtbFXg4nhUNcM+wLy16zkpDAJ8h5Z0f/W5+KMto4CcqKP4fXU69iVKn+R1TOEPn6ZDJ/u/itQ/RDVjD0q+975njAjYolCcM6JAbKz59w0bSEp1X3oHQc6LF8cDz9Az5nrzdz6tVn/DrKSlK7d0OXmpcE0z5O9N0UNmoH3G4y5L48UuvRL7qVIDuLpCU8JPhN2xpOr+8gmeh66pfBe+W7UmSxyEibsZO4mfFJKjSmdCESaUCR0dJzDi6od3RhitDqkPzxjTfDjAkvCAZ7xImSk2DDd4VeChfVYQfYiXxsNziPX5AQe3Ot2i9Q== mulpuruvs@gmail.com
+
+Copy public key to Github -- GitHub -> Settings -> SSH Keys -> Add new SSH key
+
+Clone using SSH key... (where we can skip the authendication during commit)
+
+[root@ip-10-0-1-113 git-demo]# git clone https://github.com/mulpuruvs/simple-java-maven-app.git
+Cloning into 'simple-java-maven-app'...
+remote: Enumerating objects: 88, done.
+remote: Total 88 (delta 0), reused 0 (delta 0), pack-reused 88
+Unpacking objects: 100% (88/88), done.
+[root@ip-10-0-1-113 git-demo]#
+
+Cloned using SSH successfully.
+
+[root@ip-10-0-1-113 git-demo]# ls
+file.txt  sample1.txt  sample.txt  simple-java-maven-app
+[root@ip-10-0-1-113 git-demo]# cd simple-java-maven-app/
+[root@ip-10-0-1-113 simple-java-maven-app]# ls
+jenkins  pom.xml  README.md  src
+[root@ip-10-0-1-113 simple-java-maven-app]# vi README.md
+[root@ip-10-0-1-113 simple-java-maven-app]# git add README.md
+[root@ip-10-0-1-113 simple-java-maven-app]# git commit -m "commit"
+[root@ip-10-0-1-113 simple-java-maven-app]# git push origin master
+
+
+Try modifying a file now...
+
+
+
+Install Maven..
+
+    8  curl -LO http://mirrors.estointernet.in/apache/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz
+    9  tar xzvf apache-maven-3.6.0-bin.tar.gz
+   10  export MAVEN_HOME=$HOME/apache-maven-3.6.0
+   11  export MAVEN=$MAVEN_HOME/bin
+   12  export PATH=$PATH:$MAVEN
+
+Install Java..
+
+#sudo yum install java-1.8.0-openjdk-devel wget
+
+
+Install jenkins:
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+sudo yum install jenkins
+
+
+Start jenkins service :
+
+sudo service jenkins status
+sudo service jenkins start
+sudo chkconfig jenkins on
+
+Access Jenkins via URL:
+
+http://<<IP>>:8080
+
+curl indent.me // to get the IP
+
+Unlock Jenkins;
+
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+d621ed41593c4e9a8415d20ed608e81b   //password
+
+JAVA details:
+
+cd /usr/lib/jvm
+
+pwd // to know path of the directory
+
+/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64  // java_home
+
+We need to do the respective configuration in Jenkins ----
+Manage Jenkins --> Global Tool configuration
+
+Install the required plugins
+Manage Jenkins --> Manage Plugins
+
+Maven Integration plugin / Github integration plugin etc...
+
+sudo // to divert execution to root folder
+   17  sudo su  // super user
+
+   18  echo $HOME // to display var info
+   36  date 
+   37  cat /etc/passwd
+   38  $USER
+
+To know the present working directory:
+   39  pwd
+
+Create & execute the .sh file
+   40  vi greet.sh
+   41  chmod +x greet.sh
+   42  ./greet.sh
+
+View file:
+   43  cat greet.sh
+
+to know all file details
+   59  ls -al ~/.ssh/
+
+To generate PEM from PPK
+
+   65  puttygen poc.ppk -O private-openssh -o poc.pem
+
+To change ownership
+
+  sudo chown jenkins:jenkins /tmp/poc.pem
+
+
+Install Artifactory
+
+https://www.jfrog.com/confluence/display/RTF/Installing+on+Linux+Solaris+or+Mac+OS
+--
+
+Installing Artifactory OSS from an RPM disribution 
+
+wget https://bintray.com/jfrog/artifactory-rpms/rpm -O bintray-jfrog-artifactory-rpms.repo
+sudo mv bintray-jfrog-artifactory-rpms.repo /etc/yum.repos.d/
+sudo yum install jfrog-artifactory-oss
+
+
+
+
+  215  wget https://bintray.com/jfrog/artifactory-rpms/rpm -O bintray-jfrog-artifactory-rpms.repo
+  216  sudo mv bintray-jfrog-artifactory-rpms.repo /etc/yum.repos.d/
+  217  sudo yum install jfrog-artifactory-oss
+  218  sudo service artifactory start
+	 sudo systemctl stop artifactory
+
+  219  curl ident.me
+  220  exit
+  221  sudo wget -O /etc/yum.repos.d/sonar.repo http://downloads.sourceforge.net/project/sonar-pkg/rpm/sonar.repo
+  222  yum install sonar
+  223  sudo yum install sonar
+  224  sudo service sonar status
+  225  sudo service sonar start
+  226  sudo service sonar status
+  227  sudo chkconfig sonar on
+  228  sudo service sonar status
+
+  224  sudo service artifactory status
+  225  sudo systemctl stop artifactory
+ // 227  sudo systemctl jenkins status
+  228  sudo service jenkins status
+  229  sudo service jenkins stop
+  230  sudo service jenkins start
+
+
+
+Installing SonarQube for monitoring.....
+
+RPM-based Linux distributions such as RedHat, Fedora, CentOS, openSUSE
+YUM
+Add repository:
+sudo wget -O /etc/yum.repos.d/sonar.repo http://downloads.sourceforge.net/project/sonar-pkg/rpm/sonar.repo
+Install Sonar:
+yum install sonar
+
+SonarQubeToken: 72cae52d9ac0bd64d5d63d80c8f9821f4547519e  // for security .. we can test with empty token as well
+
+URL for monitoring : http://<<IP>>:9000/projects
+
+
+
+
+
+
+sudo docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home h1kkan/jenkins-docker:lts
+
+sudo docker run -u root -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home h1kkan/jenkins-docker:lts

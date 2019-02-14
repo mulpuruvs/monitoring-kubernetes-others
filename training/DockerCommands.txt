@@ -1,0 +1,224 @@
+Clone Docker project
+
+
+  283  git clone https://github.com/mulpuruvs/cicd-pipeline-docker.git
+  284  ls -l
+  285  cd cicd-pipeline-docker/
+  286  ls -l
+  287  vi Dockerfile
+  288  cat Dockerfile
+  289  ls -l
+
+Install Docker
+
+  290  sudo yum install docker
+
+  291  sudo service docker status
+  292  sudo service docker start
+  293  sudo docker info
+  294  clear
+  295  sudo systemctl enable docker
+
+
+Dockerize the image
+
+	sudo docker build -t node-app .  // . is for the location... if you are somewhere else, need to provide full path
+
+		// we can create credentials for Docker & provide as "args" over here..
+
+Note: better to use all the required stuff as one single command, as it will create different images for each command (layer by layer... layer per command)
+
+logs:
+
+[centos@ip-10-0-1-113 cicd-pipeline-docker]$ sudo docker build -t node-app .
+Sending build context to Docker daemon   469 kB
+Step 1/7 : FROM node:carbon
+Trying to pull repository docker.io/library/node ...
+carbon: Pulling from docker.io/library/node
+ab1fc7e4bf91: Pull complete
+35fba333ff52: Pull complete
+f0cb1fa13079: Pull complete
+3d1dd648b5ad: Pull complete
+49f7a0920ce1: Pull complete
+1d199f738c5f: Pull complete
+8968c17918fc: Pull complete
+b7a5354dec59: Pull complete
+Digest: sha256:cb66110c9c7d84bae9a6db8675f49d5c9e34d528023ef185b186e29ae5461051
+Status: Downloaded newer image for docker.io/node:carbon
+ ---> 1f6c34f7921c
+Step 2/7 : WORKDIR /usr/src/app
+ ---> aed61e971c46
+Removing intermediate container 941ab16bb8c0
+Step 3/7 : COPY package*.json ./
+ ---> 49b1df080f17
+Removing intermediate container 09ddd065e814
+Step 4/7 : RUN npm install
+ ---> Running in 28ad1354489b
+
+added 666 packages from 1122 contributors and audited 4249 packages in 8.44s
+found 38 vulnerabilities (7 low, 21 moderate, 10 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+ ---> 8313a2f89af7
+Removing intermediate container 28ad1354489b
+Step 5/7 : COPY . .
+ ---> 3b69ea1c90e2
+Removing intermediate container 2c39cc31d19f
+Step 6/7 : EXPOSE 8080
+ ---> Running in 321bce230656
+ ---> a224d94d7c0c
+Removing intermediate container 321bce230656
+Step 7/7 : CMD npm start
+ ---> Running in 3498280faeb7
+ ---> a000535708ea
+Removing intermediate container 3498280faeb7
+Successfully built a000535708ea
+
+
+[centos@ip-10-0-1-113 cicd-pipeline-docker]$ sudo docker image ls
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+node-app            latest              a000535708ea        2 minutes ago       935 MB
+docker.io/node      carbon              1f6c34f7921c        12 days ago         893 MB
+
+
+[centos@ip-10-0-1-113 cicd-pipeline-docker]$ sudo docker run -p 8080:8080 -d node-app
+ 
+-p  port forwarding 
+hostIP:container IP
+
+[centos@ip-10-0-1-113 cicd-pipeline-docker]$ sudo docker run -p 8080:8080 -d node-app
+3ab3786db734303cc978a5e7ddd18d0d3c17959cc11f966e55ff545748c39b4e
+/usr/bin/docker-current: Error response from daemon: driver failed programming external connectivity on endpoint unruffled_nightingale (0a122e3e9ff768342f81d679f406d2228ae4f98d904f0c2d78704cc1a8b21925): Error starting userland proxy: listen tcp 0.0.0.0:8080: bind: address already in use.
+[centos@ip-10-0-1-113 cicd-pipeline-docker]$ sudo service jenkins status
+? jenkins.service - LSB: Jenkins Automation Server
+   Loaded: loaded (/etc/rc.d/init.d/jenkins; bad; vendor preset: disabled)
+   Active: active (running) since Mon 2019-02-04 05:08:38 UTC; 1h 21min ago
+     Docs: man:systemd-sysv-generator(8)
+    Tasks: 43
+   Memory: 5.3M
+   CGroup: /system.slice/jenkins.service
+           +-1325 /etc/alternatives/java -Dcom.sun.akuma.Daemon=daemonized -Djava.awt.headless=true -DJENKINS_HOME=/var/lib/jenkins -jar /usr/lib/jenkins/jenkins.war...
+
+Feb 04 05:08:37 ip-10-0-1-113.us-west-2.compute.internal systemd[1]: Starting LSB: Jenkins Automation Server...
+Feb 04 05:08:37 ip-10-0-1-113.us-west-2.compute.internal runuser[1033]: pam_unix(runuser:session): session opened for user jenkins by (uid=0)
+Feb 04 05:08:38 ip-10-0-1-113.us-west-2.compute.internal jenkins[1013]: Starting Jenkins [  OK  ]
+Feb 04 05:08:38 ip-10-0-1-113.us-west-2.compute.internal systemd[1]: Started LSB: Jenkins Automation Server.
+[centos@ip-10-0-1-113 cicd-pipeline-docker]$ sudo service jenkins stop
+Stopping jenkins (via systemctl):  ^[[A^[[A                [  OK  ]
+[centos@ip-10-0-1-113 cicd-pipeline-docker]$ sudo service jenkins status
+? jenkins.service - LSB: Jenkins Automation Server
+   Loaded: loaded (/etc/rc.d/init.d/jenkins; bad; vendor preset: disabled)
+   Active: inactive (dead) since Mon 2019-02-04 06:30:08 UTC; 4s ago
+     Docs: man:systemd-sysv-generator(8)
+  Process: 4490 ExecStop=/etc/rc.d/init.d/jenkins stop (code=exited, status=0/SUCCESS)
+
+Feb 04 05:08:37 ip-10-0-1-113.us-west-2.compute.internal systemd[1]: Starting LSB: Jenkins Automation Server...
+Feb 04 05:08:37 ip-10-0-1-113.us-west-2.compute.internal runuser[1033]: pam_unix(runuser:session): session opened for user jenkins by (uid=0)
+Feb 04 05:08:38 ip-10-0-1-113.us-west-2.compute.internal jenkins[1013]: Starting Jenkins [  OK  ]
+Feb 04 05:08:38 ip-10-0-1-113.us-west-2.compute.internal systemd[1]: Started LSB: Jenkins Automation Server.
+Feb 04 06:30:07 ip-10-0-1-113.us-west-2.compute.internal systemd[1]: Stopping LSB: Jenkins Automation Server...
+Feb 04 06:30:08 ip-10-0-1-113.us-west-2.compute.internal jenkins[4490]: Shutting down Jenkins [  OK  ]
+Feb 04 06:30:08 ip-10-0-1-113.us-west-2.compute.internal systemd[1]: Stopped LSB: Jenkins Automation Server.
+
+[centos@ip-10-0-1-113 cicd-pipeline-docker]$ sudo docker run -p 8080:8080 -d node-app
+027472a774e60e4cf35331509528e3311a82a6c816bb407efa0dbeb02a024945
+
+[centos@ip-10-0-1-113 cicd-pipeline-docker]$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED              STATUS              PORTS                    NAMES
+027472a774e6        node-app            "npm start"         About a minute ago   Up About a minute   0.0.0.0:8080->8080/tcp   gallant_mirzakhani
+
+[centos@ip-10-0-1-113 cicd-pipeline-docker]$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED              STATUS              PORTS                    NAMES
+027472a774e6        node-app            "npm start"         About a minute ago   Up About a minute   0.0.0.0:8080->8080/tcp   gallant_mirzakhani
+
+//To go into the image
+
+[centos@ip-10-0-1-113 cicd-pipeline-docker]$ sudo docker exec -it 027472a774e6 /bin/bash
+root@027472a774e6:/usr/src/app# ls -l
+total 208
+-rw-rw-r--.   1 root root    118 Feb  4 06:04 Dockerfile
+-rw-rw-r--.   1 root root    280 Feb  4 06:03 Jenkinsfile
+-rw-rw-r--.   1 root root    276 Feb  4 06:03 README.md
+-rw-rw-r--.   1 root root   1079 Feb  4 06:03 app.js
+drwxrwxr-x.   2 root root     17 Feb  4 06:03 bin
+-rw-rw-r--.   1 root root    667 Feb  4 06:03 build.gradle
+drwxrwxr-x.   2 root root     25 Feb  4 06:03 data
+drwxrwxr-x.   3 root root     21 Feb  4 06:03 gradle
+-rwxrwxr-x.   1 root root   5296 Feb  4 06:03 gradlew
+-rw-rw-r--.   1 root root   2260 Feb  4 06:03 gradlew.bat
+drwxr-xr-x. 133 root root   4096 Feb  4 06:21 node_modules
+-rw-rw-r--.   1 root root 160017 Feb  4 06:03 package-lock.json
+-rw-rw-r--.   1 root root    482 Feb  4 06:03 package.json
+drwxrwxr-x.   4 root root     44 Feb  4 06:03 public
+drwxrwxr-x.   2 root root     39 Feb  4 06:03 routes
+-rw-rw-r--.   1 root root    383 Feb  4 06:03 settings.gradle
+drwxrwxr-x.   2 root root     27 Feb  4 06:03 test
+drwxrwxr-x.   2 root root     61 Feb  4 06:03 views
+root@027472a774e6:/usr/src/app#
+
+root@027472a774e6:/usr/src/app# exit
+exit
+[centos@ip-10-0-1-113 cicd-pipeline-docker]$ sudo docker stop 027472a774e6
+027472a774e6
+[centos@ip-10-0-1-113 cicd-pipeline-docker]$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+
+[centos@ip-10-0-1-113 ~]$ sudo docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+node-app            latest              a000535708ea        19 minutes ago      935 MB
+docker.io/node      carbon              1f6c34f7921c        12 days ago         893 MB
+
+
+Build the Dockerfile to an Image
+
+  299  sudo docker build -t node-app .
+  300  sudo docker image ls
+  305  sudo docker run -p 8080:8080 -d node-app
+  306  sud docker ps
+  307  sudo docker ps
+  308  sudo docker exec -it 027472a774e6 /bin/bash
+  309  sudo docker stop 027472a774e6
+  310  sudo docker ps
+  311  clear
+  312  sudo docker rmi root@027472a774e6:/usr/src/app# exit
+  313  exit
+  314  sudo docker ps
+  315  sudo docker rm 027472a774e6
+  316  sudo docker images
+
+[centos@ip-10-0-1-113 ~]$ sudo groupadd docker
+[centos@ip-10-0-1-113 ~]$ sudo usermod -aG docker $USER
+[centos@ip-10-0-1-113 ~]$ sudo docker version
+
+  349  sudo docker stop 3ab3786db734
+  350  sudo docker rmi 3ab3786db734
+  351  sudo docker rm 3ab3786db734
+  352  sudo docker ps -a
+  353  sudo docker rm 51ea61ec4b18
+  354  sudo docker ps -a
+
+Create jenkins Image:
+
+  315  mkdir jenkins
+  316  cd jenkins/
+  317  vi Dockerfile
+  318  ls -l
+  319  vi Dockerfile
+  321  cat Dockerfile
+
+
+
+ 426  clear
+  427  docker run -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
+  428  sudo docker run -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
+  429  cat jenkins_home
+  430  cat $jenkins_home
+  431  echo $jenkins_home
+  432  di jenkins
+  433  id jenkins
+  434  useradd jenkins
+  435  vi Dockerfile
+
+
+
+
+

@@ -1,0 +1,19 @@
+How to push local project to GitHub repo:
+
+1. create a project in local
+2. create a Repository in github
+3. open command prompt / git bash 
+4. change the current directory to working directory
+//cd spring-boot-jenkins
+5. initialize git
+//git init
+6. Add all files for staging
+//git add .
+7. commit the files
+//git commit -m "Spring Boot with Jenkins/Docker"
+8. Add URL for the Remote repo
+//git remote add origin https://github.com/mulpuruvs/spring-boot-docker.git
+9. Verify the URL
+//git remote -v
+10. Push your changes in your local to GitHub
+//git push origin master

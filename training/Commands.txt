@@ -1,0 +1,236 @@
+    1  ls -l
+    2  git --version
+    3  git
+    4  yum install git
+    6  cd root
+    7  cd home
+    15  cd centos/
+   16  clear
+   17  sudo su
+   18  echo $HOME
+   23  pwd
+   25  vi .bashrc
+   35  exit
+   36  date
+   37  cat /etc/passwd
+   38  $USER
+   39  pwd
+   40  vi greet.sh
+   41  chmod +x greet.sh
+   42  ./greet.sh
+   43  cat greet.sh
+   44  cat /etc/passwd
+   45  vi greet.sh
+   46  ./greet.sh
+   47  vi greet.sh
+   48  ./greet.sh
+   49  vi greet.sh
+   50  exit
+   51  sudo yum install putty-tools
+   52  sudo vi /var/lib/jenkins/config.xml
+   53  sudo service jenkins restart
+   54  cd /var/lib/jenkins/workspace/MyPipeline
+   57  apt-get install putty-tools
+   58  apt-get
+   59  ~/ssh/
+   60  cd ssh
+   64  ~/ssh/
+   66  ~/ssh/id_rsa
+   67  sudo apt-get install putty-tools
+   69  wget
+   70  sudo apt-get install
+   71  sudo yum install apt-get
+   73  sudo yum install putty-tools
+   74  sudo yum install puttygen
+   75  yum install puttygen
+   76  sudo yum install puttygen
+   77  sudo yum install putty
+   78  sudo yum install apt-get
+   79  clear
+   80  sudo apt-get install putty-tools
+   81  sudo yum install putty-tools
+   82  sudo yum update putty-tools
+   84  yum install putty-tools
+   85  sudo yum install putty-tools
+   95  puttygen
+   96  ls -l ~/.ssh
+   97  ssh-keygen -t rsa -b 4096 -C "mulpuruvs@gmail.com"
+   98  ls -l ~/.ssh
+   99  eval $(ssh-agent -s)
+  100  ssh-add ~/.ssh/id_rsa
+  101  cat ~/.ssh/id_rsa.pub
+  102  sudo yum install putty-tools
+  103  clear
+  104  sudo yum install putty
+  105  sudo yum install puttygen
+  106  sudo yum install putty-tools
+  110  curl ident.me
+  114  mvn
+  115  echo #PATH
+  117  sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+  118  sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+  119  sudo yum install jenkins
+  120  sudo service jenkins status
+  121  sudo service jenkins start
+  122  sudo chkconfig jenkins on
+  123  vi /var/lib/jenkins/config.xml
+  127  yum install epel-release
+  128  sudo yum install epel-release
+  129  sudo yum install putty-tools
+  130  sudo yum install puttygen
+  131  sudo yum install putty-tools
+  132  sudo yum install putty
+  133  puttygen
+  134  ls -al ~/.ssh/
+  135  pwd
+  136  vi poc.ppk
+  137  cat poc.ppk
+  138  ls -l
+  139  ls -al
+  140  puttygen poc.ppk -O private-openssh -o poc.pem
+  141  ls -al
+  142  mkdir tmp
+  143  cd tmp
+  147  history
+  149  chmod 600 poc.pem
+  150  mv poc.pem /tmp
+  151  chown jenkins:jenkins /tmp/poc.pem
+  155  sudo chown jenkins:jenkins /tmp/poc.pem
+  158  mv poc.pem /tmp
+  159  cd ..
+  160  mv poc.pem /tmp
+  164  sudo su
+  172  sudo puttygen -O poc.ppk -o private-openssh poc.pem
+  173  puttygen -O poc.ppk -o private-openssh poc.pem
+  174  puttygen poc.ppk -O private-openssh -o poc.pem
+  177  sudo chown jenkins:jenkins /tmp/poc.pem
+  214  vi .bashrc
+  215  wget https://bintray.com/jfrog/artifactory-rpms/rpm -O bintray-jfrog-artifactory-rpms.repo
+  216  sudo mv bintray-jfrog-artifactory-rpms.repo /etc/yum.repos.d/
+  217  sudo yum install jfrog-artifactory-oss
+  218  sudo service artifactory start
+  219  curl ident.me
+  220  exit
+  224  sudo wget -O /etc/yum.repos.d/sonar.repo http://downloads.sourceforge.net/project/sonar-pkg/rpm/sonar.repo
+  225  yum install sonar
+  226  sudo yum install sonar
+  228  sudo service sonar start
+  229  sudo service sonar status
+  230  sudo chkconfig sonar on
+  233  mvn sonar:sonar   -Dsonar.host.url=http://54.148.73.162:9000   -Dsonar.login=72cae52d9ac0bd64d5d63d80c8f9821f4547519e
+//sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
+  243  sudo service artifactory status
+  244  sudo systemctl stop artifactory
+  247  sudo service jenkins status
+  248  sudo service jenkins stop
+  249  sudo service jenkins start
+  268  cd git-demo/apache-maven-3.6.0
+  273  export PATH=$PATH:git-demo/apache-maven-3.6.0/bin
+ 299  sudo docker build -t node-app .
+  300  sudo docker image ls
+  301  sudo docker run -p 8080:8080 -d node-app
+  302  sudo service jenkins status
+  303  sudo service jenkins stop
+  304  sudo service jenkins status
+  305  sudo docker run -p 8080:8080 -d node-app
+  306  sud docker ps
+  307  sudo docker ps
+  308  sudo docker exec -it 027472a774e6 /bin/bash
+  309  sudo docker stop 027472a774e6
+  310  sudo docker ps
+  311  clear
+  312  sudo docker rmi root@027472a774e6:/usr/src/app# exit
+  313  exit
+  314  sudo docker ps
+  315  sudo docker rm 027472a774e6
+  316  sudo docker images
+  317  history
+  318  pwd
+  319  sudo docker images
+  320  clear
+  321  sudo docker images
+  322  sudo groupadd docker
+  323  sudo usermod -aG docker $USER
+  324  docker version
+  325  sudo docker images
+  326  sudo docker version
+  327  docker images
+  328  sudo docker images
+  329  clear
+  330  sudo docker images
+  331  sudo docker rmi a000535708ea
+  332  sudo docker run -p 8080:8081 -d node-app
+  333  sudo docker images
+  334  sudo docker ps -a
+  335  sudo docker stop 51ea61ec4b18 3ab3786db734
+  336  sudo docker stop 51ea61ec4b18
+  337  sudo docker ps -a
+  338  sudo docker stop 3ab3786db734
+  339  sudo docker ps -a
+  340  sudo docker rmi 3ab3786db734
+  341  sudo docker rmi 51ea61ec4b18
+  342  sudo docker ps -a
+  343  sudo docker stop 3ab3786db734
+  344  sudo docker ps -a
+  345  clear
+  346  sudo docker ps -a
+  347  sudo docker rmi 3ab3786db734
+  348  pwd
+  349  sudo docker stop 3ab3786db734
+  350  sudo docker rmi 3ab3786db734
+  351  sudo docker rm 3ab3786db734
+  352  sudo docker ps -a
+  353  sudo docker rm 51ea61ec4b18
+  354  sudo docker ps -a
+  355  history
+  356  clear
+  357  sudo docker build -t node-app .
+  358  sudo docker run -p 8080:8080 -d node-app
+  359  sudo docker ps -a
+  360  sudo docker exec -it 39ba5dc19bf6 /bin/bash
+  361  sudo docker images
+  362  sudo docker stop  a000535708ea
+  363  sudo docker run -p 8080:8085 -d node-app
+  364  sudo docker run -p 8080:8082 -d node-app
+  365  sudo docker run -p 8082:8085 -d node-app
+  366  sudo docker images
+  367  sudo docker exec -it  a000535708ea /bin/bash
+  368  sudo docker stop  a000535708ea
+  369  sudo docker images
+  370  sudo docker run -p 8080:8081 -d node-app
+  371  sudo docker rm a000535708ea
+  372  cd /usr/src/app
+  373  pwd
+  374  ls -al
+  375  cd cicd-pipeline-docker/
+  376  sudo docker images
+  377  sudo docker stop a000535708ea
+  378  sudo docker exec -it a000535708ea /bin/bash
+  379  sudo docker stop  a000535708ea
+  380  ps -a
+
+  931  sudo docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home h1kkan/jenkins-docker:lts
+  932  clear
+  933  sudo docker run -u root -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home h1kkan/jenkins-docker:lts
+  934  docker images
+  935  docker ps -a
+  936  docker rm 7cc03c71dc0f
+  937  docker rm 0457fcac4f54
+
+//for the docker info
+sudo docker info
+// to enable docker to start automatically
+sudo systemctl enable docker
+//status the docker
+sudo service docker status
+//start the docker
+sudo systemctl start docker
+
+//to create / run the Docker container
+sudo docker run -u root -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home h1kkan/jenkins-docker:lts
+	-- here running with user 'root'
+
+//to avoid docker socket issue
+sudo docker run -u root -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock h1kkan/jenkins-docker:lts
+
+

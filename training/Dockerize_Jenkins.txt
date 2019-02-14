@@ -1,0 +1,70 @@
+  
+386  mkdir jenkins
+  387  cd jenkins/
+  388  vi Dockerfile
+  390  vi Dockerfile
+
+  396  git clone https://github.com/mulpuruvs/cicd-pipeline-docker.git
+  398  cd cicd-pipeline-docker/
+  403  git clone https://github.com/mulpuruvs/docker.git
+  405  cd docker/
+  407  vi Dockerfile
+  410  sudo docker build -t dockerjenkins .
+  412  sudo docker run -p 8080:8080 -p 50000:50000 jenkins
+  413  sudo docker run -p 8080:8080 -p 50000:50000 -v /home/centos:/var/jenkins_home jenkins
+  418  sudo docker images ls
+  420  cd docker/
+  422  sudo docker images ls
+  423  sudo docker build -t dockerjenkins .
+  424  sudo docker images ls
+  425  sudo docker run -p 8090:8090 -d dockerjenkins
+  426  sudo docker images ls
+  427  sudo docker ps
+  435  sudo docker stop ee11119b16bc
+  436  sudo docker rm ee11119b16bc
+  437  sudo docker ps
+  438  sudo docker run -p 8080:8080 -d dockerjenkins
+  439  sudo docker ps
+  440  sudo docker exec -it bf78837e12e1 /bin/bash
+
+  454  sudo service jenkins status
+  455  sudo service jenkins start
+// OR You will get the admin password in the CONSOLE, as part of the image startup / running
+
+  474  cd cicd-pipeline-docker/
+  475  sudo docker images ps
+
+  489  id jenkins
+
+  490  useradd jenkins
+
+  491  vi Dockerfile
+  492  history
+  493  id jenkins
+  494  ls -l
+  495  sudo docker images ps
+  496  sudo docker build -t dockerjenkins
+  497  sudo docker build -t dockerjenkins .
+  498  sudo docker images ps
+  499  sudo docker run -p 8080:8080 -d dockerjenkins
+  500  sudo docker images ps
+  505  sudo service jenkins status
+  506  sudo service jenkins stop
+  509  sudo docker images ps
+  511  sudo docker build -t jenkins .
+  512  sudo docker run -p 8080:8080 -d jenkins
+  516  sudo docker images
+  517  sudo docker stop b127d86c1dcc
+  518  docker run -p 8080:8080 -p 50000:50000 -v /home/centos:/var/home/centos jenkins/jenkins
+  519  sudo docker run -p 8080:8080 -p 50000:50000 -v /home/centos:/var/home/centos jenkins/jenkins
+  520  sudo docker images
+  524  sudo docker ps -a
+  537  sudo docker stop 77e29206b0a3
+  538  sudo docker rm 77e29206b0a3
+
+  552  sudo docker build -t jenkins .
+  553  docker run -p 8080:8080 -p 50000:50000 -v /home/centos:/var/home/centos jenkins
+  554  sudo docker run -p 8080:8080 -p 50000:50000 -v /home/centos:/var/home/centos jenkins
+  555  docker ps
+  556  sudo docker ps
+  557  sudo docker service jenkins status
