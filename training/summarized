@@ -1,0 +1,232 @@
+    2  sudo service jenkins stop
+    3  sudo service jenkins start
+    4  curl ident.me
+   11  ls -l
+   27  export PATH=$PATH:git-demo/apache-maven-3.6.0/bin
+   28  echo $PATH
+   37  git clone https://github.com/mulpuruvs/cicd-pipeline-docker.git
+   41  vi Dockerfile
+   42  cat Dockerfile
+   43  ls -l
+   44  sudo yum install docker
+   45  sudo service docker status
+   46  sudo service docker start
+   47  sudo docker info
+   49  sudo systemctl enable docker
+   53  sudo docker build -t node-app .
+   54  sudo docker image ls
+   55  sudo docker run -p 8080:8080 -d node-app
+   56  sudo service jenkins status
+   57  sudo service jenkins stop
+   58  sudo service jenkins status
+   59  sudo docker run -p 8080:8080 -d node-app
+   60  sud docker ps
+   61  sudo docker ps
+   62  sudo docker exec -it 027472a774e6 /bin/bash
+   63  sudo docker stop 027472a774e6
+   64  sudo docker ps
+   68  sudo docker ps
+   69  sudo docker rm 027472a774e6
+   76  sudo groupadd docker
+   77  sudo usermod -aG docker $USER
+   78  docker version
+   80  sudo docker version
+   84  
+   85  sudo docker rmi a000535708ea
+   86  sudo docker run -p 8080:8081 -d node-app
+   87  
+   88  sudo docker ps -a
+   92  sudo docker stop 3ab3786db734
+   94  sudo docker rmi 3ab3786db734
+
+  111  sudo docker build -t node-app .
+  112  sudo docker run -p 8080:8080 -d node-app
+  113  sudo docker ps -a
+  114  sudo docker exec -it 39ba5dc19bf6 /bin/bash
+  120  sudo docker images
+  121  sudo docker exec -it  a000535708ea /bin/bash
+  122  sudo docker stop  a000535708ea
+  125  sudo docker rm a000535708ea
+  126  cd /usr/src/app
+  127  pwd
+  128  ls -al
+  129  cd cicd-pipeline-docker/
+  130  
+  131  sudo docker stop a000535708ea
+  132  sudo docker exec -it a000535708ea /bin/bash
+  133  sudo docker stop  a000535708ea
+  134  ps -a
+  135  ps -l
+  136  cd ..
+  137  ps -l
+  138  ls -l
+  139  ls -l
+  140  mkdir jenkins
+  141  cd jenkins/
+  142  vi Dockerfile
+  143  ls -l
+  144  vi Dockerfile
+  145  vat Dockerfile
+  146  cat Dockerfile
+  147  clear
+  148  history
+  149  clear
+  150  git clone https://github.com/mulpuruvs/cicd-pipeline-docker.git
+  151  ls -l
+  152  cd cicd-pipeline-docker/
+  153  cd ..
+  154  sudo rmdir cicd-pipeline-docker/
+  155  cd ..
+  156  ls -l
+  157  git clone https://github.com/mulpuruvs/docker.git
+  158  ls -l
+  159  cd docker/
+  160  ls -l
+  161  vi Dockerfile
+  162  clear
+  163  ls -l
+  164  sudo docker build -t dockerjenkins .
+  165  docker run -p 8080:8080 -p 50000:50000 jenkins
+  166  sudo docker run -p 8080:8080 -p 50000:50000 jenkins
+  167  sudo docker run -p 8080:8080 -p 50000:50000 -v /home/centos:/var/jenkins_home jenkins
+  168   ls
+  169  cd ..
+  170   ls
+  171  cd cicd-pipeline-docker/
+  172   ls
+  173  cd ..
+  174  cd docker/
+  175  ls -l
+  176   ls
+  177  sudo docker build -t dockerjenkins .
+  178   ls
+  179  sudo docker run -p 8090:8090 -d dockerjenkins
+  180   ls
+  181  sudo docker ps
+  183  sudo docker stop ad1e46d8e36f
+  184  sudo docker rm ad1e46d8e36f
+  192  sudo docker run -p 8080:8080 -d dockerjenkins
+  193  sudo docker ps
+  194  sudo docker exec -it bf78837e12e1 /bin/bash
+  195  /var/jenkins_home/secrets/initialAdminPassword
+  196  sudo cat /var/jenkins_home/secrets/initialAdminPassword
+  197  
+  198   cat /var/jenkins_home/secrets/initialAdminPassword
+  199  sudo service jenkins start
+  210  sudo service jenkins status
+  211  sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+  213  cd /var/lib/secrets
+  221  vi credentials.xml
+  224  cd home/centos/
+  235  cat /var/lib/jenkins/config.xml
+  237  docker run -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
+  238  sudo docker run -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
+  241  echo $jenkins_home
+  244  useradd jenkins
+  250  sudo docker build -t dockerjenkins
+  251  sudo docker build -t dockerjenkins .
+  253  sudo docker run -p 8080:8080 -d dockerjenkins
+  265  sudo docker build -t jenkins .
+  266  sudo docker run -p 8080:8080 -d jenkins
+  267  sudo service jenkins status
+  269  sudo docker run -p 8080:8080 -d jenkins
+  272  docker run -p 8080:8080 -p 50000:50000 -v /home/centos:/var/home/centos jenkins/jenkins
+  273  sudo docker run -p 8080:8080 -p 50000:50000 -v /home/centos:/var/home/centos jenkins/jenkins
+  306  sudo docker build -t jenkins .
+  307  docker run -p 8080:8080 -p 50000:50000 -v /home/centos:/var/home/centos jenkins
+  308  sudo docker run -p 8080:8080 -p 50000:50000 -v /home/centos:/var/home/centos jenkins
+  317  sudo docker service jenkins status
+  322  git clone https://github.com/mulpuruvs/prometheus.git
+  324  cd prometheus/
+  333  cat docker-compose.yml
+  351  cat alert.rules
+  352  cat prometheus.yml
+  353  sudo docker build -t prometheusservice .
+  369  git clone https://github.com/mulpuruvs/prometheus.git
+  375  sudo rmdir prometheus
+  376  sudo rm prometheus
+  377  sudo rm -r prometheus/
+  388  docker run -p 8080:8080 -p 50000:50000 -v /home/centos:/var/home/centos prometheus/prometheus
+  389  sudo docker run -p 8080:8080 -p 50000:50000 -v /home/centos:/var/home/centos prometheus/prometheus
+  390  sudo /usr/bin/docker-current run --help
+  395  sudo docker run -p 8080:8080 -p 50000:50000 -v /home/centos:/var/home/centos prometheus/prometheus
+  396  sudo docker run -p 8080:8080 -p 50000:50000 -v /home/centos:/var/home/centos
+  452  sudo docker run -p 8080:8080 -p 50000:50000 -v /home/centos:/var/home/centos jenkins/jenkins
+  461  sudo docker service docker status
+  473  sudo service artifactory stop
+  474  sudo service artifactory status
+  475  sudo yum install gradle
+  476  sudo yum install gradlew
+  477  sudo yum install epel-release
+  478  sudo yum install gradle
+  479  sudo gradle wrapper
+  480  sudo yum install gradle wrapper
+  481  sudo yum install gradle
+  482  sudo yum install gradlew
+  483  sudo gradle wrapper
+  484  sudo gradlew wrapper
+  485  sudo gradlew
+  489  sudo gradle wrapper --gradle-version 2.13
+  490  sudo docker gradle wrapper --gradle-version 2.13
+  491  sudo yum install gradle wrapper --gradchmod +x gradlewle-version 2.13
+  492  chmod +x gradlew
+  493  pwd
+  494  $ls -l ./gradlew
+  496  ls -l ./
+  507  gradle wrapper gradlew
+  508  sudo yum gradle wrapper gradlew
+  509  sudo yum /bin/gradle wrapper gradlew
+  536  sudo docker exec -it 8d80105d0758 /bin/bash
+  538  docker run --privileged -d docker:dind
+  540  sudo docker exec -it 8d80105d0758 /bin/bash
+  541  sudo docker exec -it 301d350c6df0 /bin/bash
+  543  docker run --privileged -d jenkins
+  587  sudo docker run -p 8080:8080 -p 50000:50000 -v /home/centos:/var/home/centos jenkins
+  594  sudo docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home h1kkan/jenkins-docker:lts
+  650   sudo docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home /var/jenkins_home:/var/jenkins_home  h1kkan/jenkins-docker:lts
+  651  sudo docker system prune
+  660  sudo docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock h1kkan/jenkins-docker:lts
+  666  sudo docker run -u root -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home h1kkan/jenkins-docker:lts
+  667  sudo docker run -u root -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock h1kkan/jenkins-docker:lts
+  670  sudo docker run -u root -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock h1kkan/jenkins-docker:lts
+  672  sudo docker run -u root -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock h1kkan/jenkins-docker:lts
+  687  sudo docker run -u root -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home h1kkan/jenkins-docker:lts
+  688  sudo docker run -u root -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock h1kkan/jenkins-docker:lts
+  741  sudo docker run -u root -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock h1kkan/jenkins-docker:lts
+  750  sudo docker run -u root -p 8085:8085 -p 50000:50000 -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock h1kkan/jenkins-docker:lts
+  764  sudo docker stop 73810234db7c
+  765  sudo docker rm 73810234db7c
+  771  sudo docker run -u root -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock h1kkan/jenkins-docker:lts
+  772  cd ..
+  773  sudo yum remove docker                   docker-client                   docker-client-latest                   docker-common                   docker-latest                   docker-latest-logrotate                   docker-logrotate                   docker-engine
+  777  sudo service docker.service status
+  779  sudo yum remove docker                   docker-client                   docker-client-latest                   docker-common                   docker-latest                   docker-latest-logrotate                   docker-logrotate   docker-selinux   docker-engine-selinux                   docker-engine
+  781  sudo -i
+  789  kubectl
+  790  clear
+  791  kubectl get pods
+  792  kubectl get svc
+  793  curl $(minikube service hello-minikube --url)
+  794  minikube start --vm-driver=none
+  795  kubectl run hello-minikube --image=gcr.io/google_containers/echoserver:1.4 --port=8080
+  796  kubectl version
+  797  curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.23.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+  798  minikube start --vm-driver=none
+  799  sudo -i
+  800  exit
+  801  cd /usr/lib/bin
+  802  cd /usr/lib/jvm
+  803  ll
+  804  cd java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64
+  828  sudo docker run -u root -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock h1kkan/jenkins-docker:lts
+  840  ls -R
+  859  docker ps -aq
+  860  docker stop $(docker ps -aq)
+  861  docker ps -a
+  862  docker rm $(docker ps -aq)
+  896  curl ident.me
+  904  kubectl
+  905  kubeconfig
+  960  sudo docker run -u root  -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock h1kkan/jenkins-docker:lts
+  980  sudo docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock h1kkan/jenkins-docker:lts
+  
