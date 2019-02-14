@@ -1,0 +1,22 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: smpprj
+  namespace: avengers
+  labels:
+    app: smpprj
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smpprj
+  template:
+    metadata:
+      labels:
+        app: smpprj
+    spec:
+      containers:
+      - name: smpprj
+        image: kartvarma/node-app:latest
+        ports:
+        - containerPort: 80

@@ -1,0 +1,12 @@
+global:
+  resolve_timeout: 5m
+route:
+  group_by: ['alertname']
+  group_wait: 3s
+  group_interval: 3s
+  repeat_interval: 1h
+  receiver: 'sysdig-test'
+receivers:
+  - name: 'sysdig-test'
+    webhook_configs:
+    - url: 'http://54.190.168.185:31010' 

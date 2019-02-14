@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: monitoring-app
+  namespace: avengers
+  labels:
+    app: monitoring-app    
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: monitoring-app
+  template:
+    metadata:
+      labels:
+        app: monitoring-app
+    spec:
+      containers:
+      - name: monitoring-app
+        image: mahi4847/monitoring-app:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080

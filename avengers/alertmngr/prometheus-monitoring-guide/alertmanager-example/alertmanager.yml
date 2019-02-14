@@ -1,0 +1,34 @@
+global:
+  resolve_timeout: 5m
+route:
+  group_by: ['alertname']
+  group_wait: 3s
+  group_interval: 3s
+  receiver: 'sysdig-test'
+  routes:
+  - match:
+      severity: slack
+    receiver: 'alert'
+
+  - match:
+    receiver: 'email-me'
+
+receivers:
+  - name: 'sysdig-test'
+    webhook_configs:
+    - url: 'http://54.190.168.185:31010'
+
+  - name: 'alert'
+    slack_configs:
+    - api_url: 'https://hooks.slack.com/services/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'
+      channel: '#monitoring'
+
+  - name: 'email-me'
+    email_configs:
+    - to: 'prasad.guru115@gmail.com'
+      from: 'root'
+      smarthost: 'localhost'
+      auth_username: 'prasad.guru115@gmail.com'
+      auth_identity: 'prasad.guru115@gmail.com'
+      auth_password: 'exlsyhbyglzqykzg'
+
